@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: url('images/header-bg.jpg') no-repeat center center/cover;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    border-bottom: #f1c40f solid 5px;
+}
+
+header .logo-container .logo {
+    width: 250px;
+    max-height: 150px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f1c40f;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.imgIntro {
+    width: 60%;
+}
+
+/* Section Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #000000;
+    position: relative;
+    border-bottom: #f1c40f solid 5px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .imgIntro {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    right: 5%;
+    color: #fff;
+    max-width: 40%;
+    text-align: right;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+.hero-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+/* Intro Section */
+.intro {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    background-color: #333;
+    flex-wrap: wrap;
+}
+
+.intro-item {
+    background-color: #222;
+    padding: 25px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 15px;
+}
+
+.intro-item h2 {
+    font-size: 1.5rem;
+    color: #f1c40f;
+    margin-bottom: 20px;
+}
+
+.intro-item p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.intro-item .btn {
+    background-color: #e67e22;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #222;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: auto;
+    align-self: center;
+    width: 60%;
+    text-align: center;
+}
+
+.intro-item .btn:hover {
+    background-color: #f1c40f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .intro-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-item {
+        width: 100%;
+    }
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 50px 20px;
+    background-color: #121212;
+    color: #e0e0e0;
+    border-bottom: #f1c40f solid 5px;
+}
+
+.timeline-title {
+    font-size: 2rem;
+    color: #f1c40f;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Timeline Container */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item .timeline-year {
+    background-color: #e67e22;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+    left: 100%;
+    margin-left: 20px;
+}
+
+.timeline-item .timeline-content {
+    background-color: #222;
+    color: #e0e0e0;
+    padding: 25px;
+    border-radius: 10px;
+    width: 80%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover effect on timeline item */
+.timeline-item:hover .timeline-year {
+    background-color: #f1c40f;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .intro-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .timeline-container {
+        max-width: 90%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
